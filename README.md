@@ -1,10 +1,28 @@
-# My Personal Project
+# Calorie Counter
 
-## A subtitle
+## Introduction   
+The main purpose of this application is to *keep track of the foods you eat 
+and calculate the total amount of their calories*. You can select the food
+you eat with a specific amount then the application will keep the information 
+and show you the individual food's calories and the total calories. You can 
+also add new kinds of food to the application to make sure it will cover
+your diet. Besides, It informs you how many more calories you 
+can have based on the daily amount of calories you need.
 
-A *bulleted* list:
-- item 1
-- item 2
-- item 3
+There are **three** kinds of this application's targeted users:
+- The people who want to lose weight.
+- The People who want to maintain their current body shape.
+- The people who want to build up their muscles.
 
-An example of text with **bold** and *italic* fonts.  
+This project interests me because the topic of body shape troubles a
+lot of people including me that want to make some progress on it. In
+this case, an application that records the approximate calorie intake
+per day can help people achieve their goals in a more scientific way 
+and encourage them to keep a healthy lifestyle.
+
+## User Stories
+- As a user, I want to be able to add food to the list of food intake.
+- As a user, I want to be able to add new kind of food.
+- As a user, I want to be able to view the foods in list of food intake.
+- As a user, I want to be able to delete food in the list of food intake.
+- As a user, I want to be able to see the number of the total calorie intake.
