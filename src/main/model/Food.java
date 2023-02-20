@@ -51,4 +51,12 @@ public class Food {
     public void setAmount(double amount) {
         this.amount = amount;
     }
+
+    /*
+     * MODIFIES: this
+     * EFFECTS: decrease unifoodid by 1
+     */
+    public void decreaseID() {
+        this.unifoodid--;
+    }
 }
