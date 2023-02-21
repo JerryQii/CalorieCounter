@@ -50,12 +50,12 @@ public class CounterApp {
 
     private void printStartMenu() {
         System.out.println("Hi! Welcome to use this application! Please press the following buttons to proceed");
-        System.out.println("   a : add the food you eat from list of food ");
-        System.out.println("   b : add food choice to list of food");
-        System.out.println("   c : delete the food you eat from list of food ");
-        System.out.println("   d : delete food choice to list of food");
-        System.out.println("   e : calculate the total calorie");
-        System.out.println("   q : quit this application");
+        System.out.println("   >a : add the food you eat from list of food choice");
+        System.out.println("   >b : add new food choice to list of food choice");
+        System.out.println("   >c : delete the food you eat from list of food eaten");
+        System.out.println("   >d : delete food choice in list of food choice");
+        System.out.println("   >e : calculate the total calorie");
+        System.out.println("   >q : quit this application");
     }
 
     private void dealInput(String input) {
@@ -82,20 +82,40 @@ public class CounterApp {
         double inputCalorie = command.nextDouble();
         Food newfood = new Food(lofa.getElement(inputId), inputCalorie);
         lofi.addFood(newfood);
-        System.out.println("Here is your list of eaten food!");
+        System.out.println("And below is your list of food eaten!");
         lofi.printListEaten();
     }
 
     private void addFoodChoice() {
-
+        System.out.println("What's the name of the food");
+        String name = command.next();
+        System.out.println("What's the unit of the food");
+        String unit = command.next();
+        System.out.println("What's the calorie per unit of the food");
+        double calorie = command.nextDouble();
+        Food addedfood = new Food(name,unit,calorie);
+        lofa.addFood(addedfood);
     }
 
     private void deleteFoodChoice() {
+        System.out.println("Below is your list of food choice!");
+        lofa.printList();
+        System.out.println("What's the id of the food choice you want to delete");
+        int id = command.nextInt();
+        lofa.deleteFood(id);
+        System.out.println("Below is your new list of food choice!");
+        lofa.printList();
 
     }
 
     private void deleteEatenFood() {
-
+        System.out.println("Below is your list of food eaten!");
+        lofi.printListEaten();
+        System.out.println("What's the id of the food eaten you want to delete");
+        int id = command.nextInt();
+        lofi.deleteFood(id);
+        System.out.println("Below is your new list of food choice!");
+        lofi.printListEaten();
     }
 
     private void calculateCalorie() {

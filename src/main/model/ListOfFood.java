@@ -46,4 +46,20 @@ public class ListOfFood {
         }
         return calorie;
     }
+
+    public void deleteFood(int id) {
+        int index = -1;
+        int trueid = -1;
+        for (Food food:lof) {
+            if (food.getId() == id) {
+                trueid = index + 1;
+            } else {
+                index += 1;
+            }
+        }
+        if (!(trueid == -1)) {
+            lof.remove(trueid);
+        }
+    }
+
 }
