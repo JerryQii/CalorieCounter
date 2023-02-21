@@ -99,6 +99,8 @@ public class CounterApp {
     }
 
     private void calculateCalorie() {
-
+        System.out.println("Here's the list of food you've eaten");
+        lofi.printListEaten();
+        System.out.println("And the total calorie is " + lofi.totalCalorie() + " calories!");
     }
 }

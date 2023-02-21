@@ -51,6 +51,11 @@ public class Food {
         return this.calorie;
     }
 
+    //EFFECTS: return the amount of food
+    public double getAmount() {
+        return this.amount;
+    }
+
     /*
      * REQUIRES: amount>0
      * MODIFIES: this

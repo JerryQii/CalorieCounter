@@ -38,4 +38,12 @@ public class ListOfFood {
             System.out.println(food.printFoodEaten());
         }
     }
+
+    public double totalCalorie() {
+        double calorie = 0;
+        for (Food food:lof) {
+            calorie += food.getCalorie() * food.getAmount();
+        }
+        return calorie;
+    }
 }
