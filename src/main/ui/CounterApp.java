@@ -1,15 +1,14 @@
 package ui;
 
 import model.Food;
-import model.ListOfFoodAvailable;
-import model.ListOfFoodIntake;
+import model.ListOfFood;
 
 import java.util.Scanner;
 
 //Calorie counter application
 public class CounterApp {
-    private ListOfFoodAvailable lofa = new ListOfFoodAvailable();
-    private ListOfFoodIntake lofi = new ListOfFoodIntake();
+    private ListOfFood lofa = new ListOfFood();
+    private ListOfFood lofi = new ListOfFood();
     private Scanner command = new Scanner(System.in);
 
     // EFFECTS: run the calorie counter application
@@ -26,13 +25,14 @@ public class CounterApp {
         initialize();
         while (running) {
             printStartMenu();
-            input = command.nextLine();
+            input = command.next();
             if (input.equals("q")) {
                 running = false;
             } else {
                 dealInput(input);
             }
         }
+        System.out.println("See you soon!");
     }
 
     /*
@@ -50,11 +50,12 @@ public class CounterApp {
 
     private void printStartMenu() {
         System.out.println("Hi! Welcome to use this application! Please press the following buttons to proceed");
-        System.out.println("a : add the food you eat from list of food ");
-        System.out.println("b : add food choice to list of food");
-        System.out.println("c : delete the food you eat from list of food ");
-        System.out.println("d : delete food choice to list of food");
-        System.out.println("q : quit this application");
+        System.out.println("   a : add the food you eat from list of food ");
+        System.out.println("   b : add food choice to list of food");
+        System.out.println("   c : delete the food you eat from list of food ");
+        System.out.println("   d : delete food choice to list of food");
+        System.out.println("   e : calculate the total calorie");
+        System.out.println("   q : quit this application");
     }
 
     private void dealInput(String input) {
@@ -66,13 +67,23 @@ public class CounterApp {
             deleteEatenFood();
         } else if (input.equals("d")) {
             deleteFoodChoice();
+        } else if (input.equals("e")) {
+            calculateCalorie();
         } else {
             System.out.println("invalid command!");
         }
     }
 
     private void addEatenFood() {
-
+        System.out.println("Please enter the id of food below that you want to add");
+        lofa.printList();
+        int inputId = command.nextInt();
+        System.out.println("Please enter the number of units that you ate");
+        double inputCalorie = command.nextDouble();
+        Food newfood = new Food(lofa.getElement(inputId), inputCalorie);
+        lofi.addFood(newfood);
+        System.out.println("Here is your list of eaten food!");
+        lofi.printListEaten();
     }
 
     private void addFoodChoice() {
@@ -84,6 +95,10 @@ public class CounterApp {
     }
 
     private void deleteEatenFood() {
+
+    }
+
+    private void calculateCalorie() {
 
     }
 }

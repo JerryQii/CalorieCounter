@@ -23,6 +23,14 @@ public class Food {
         this.calorie = calorie;
     }
 
+    public Food(Food food, double amount) {
+        this.id = unifoodid++;
+        this.amount = amount;
+        this.name = food.name;
+        this.unit = food.unit;
+        this.calorie = food.calorie;
+    }
+
     // EFFECTS: return the id of food
     public int getId() {
         return this.id;
@@ -48,8 +56,9 @@ public class Food {
      * MODIFIES: this
      * EFFECTS: set the amount of food to given double
      */
-    public void setAmount(double amount) {
+    public Food setAmount(double amount) {
         this.amount = amount;
+        return this;
     }
 
     /*
@@ -58,5 +67,14 @@ public class Food {
      */
     public void decreaseID() {
         this.unifoodid--;
+    }
+
+    public String printFood() {
+        return "   FoodID:" + String.valueOf(id) + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie;
+    }
+
+    public String printFoodEaten() {
+        return "   FoodID:" + String.valueOf(id) + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie
+                + "  Amount:" + amount;
     }
 }
