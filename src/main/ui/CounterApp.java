@@ -10,6 +10,7 @@ public class CounterApp {
     private ListOfFood lofa = new ListOfFood();
     private ListOfFood lofi = new ListOfFood();
     private Scanner command = new Scanner(System.in);
+    private double dailycalorie;
 
     // EFFECTS: run the calorie counter application
     public CounterApp() {
@@ -23,6 +24,7 @@ public class CounterApp {
         String input = null;
 
         initialize();
+        System.out.println("Hi! Welcome to use this application! ");
         while (running) {
             printStartMenu();
             input = command.next();
@@ -48,8 +50,9 @@ public class CounterApp {
         lofa.addFood(coke);
     }
 
+    // EFFECTS: print the start menu for user
     private void printStartMenu() {
-        System.out.println("Hi! Welcome to use this application! Please press the following buttons to proceed");
+        System.out.println("Please press the following buttons to proceed");
         System.out.println("   >a : add the food you eat from list of food choice");
         System.out.println("   >b : add new food choice to list of food choice");
         System.out.println("   >c : delete the food you eat from list of food eaten");
@@ -58,6 +61,10 @@ public class CounterApp {
         System.out.println("   >q : quit this application");
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: deal with user input from start menu
+     */
     private void dealInput(String input) {
         if (input.equals("a")) {
             addEatenFood();
@@ -74,6 +81,10 @@ public class CounterApp {
         }
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: add user's eaten food from list of food choice
+     */
     private void addEatenFood() {
         System.out.println("Please enter the id of food below that you want to add");
         lofa.printList();
@@ -86,6 +97,10 @@ public class CounterApp {
         lofi.printListEaten();
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: add new food choice to list of food choice
+     */
     private void addFoodChoice() {
         System.out.println("What's the name of the food");
         String name = command.next();
@@ -97,6 +112,10 @@ public class CounterApp {
         lofa.addFood(addedfood);
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: delete food choice in the list of food choice
+     */
     private void deleteFoodChoice() {
         System.out.println("Below is your list of food choice!");
         lofa.printList();
@@ -108,6 +127,10 @@ public class CounterApp {
 
     }
 
+    /*
+     * MODIFIES: this
+     * EFFECTS: delete user's eaten food in the list of food eaten
+     */
     private void deleteEatenFood() {
         System.out.println("Below is your list of food eaten!");
         lofi.printListEaten();
@@ -118,6 +141,7 @@ public class CounterApp {
         lofi.printListEaten();
     }
 
+    // EFFECTS: print the total calorie of the list of food eaten
     private void calculateCalorie() {
         System.out.println("Here's the list of food you've eaten");
         lofi.printListEaten();

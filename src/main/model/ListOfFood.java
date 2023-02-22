@@ -27,12 +27,14 @@ public class ListOfFood {
         lof.add(food);
     }
 
+    // EFFECTS: print the list of food with id, name, unit, and calorie
     public void printList() {
         for (Food food : lof) {
             System.out.println(food.printFood());
         }
     }
 
+    // EFFECTS: print the list of food with id, name, unit, calorie, and amount
     public void printListEaten() {
         for (Food food : lof) {
             System.out.println(food.printFoodEaten());

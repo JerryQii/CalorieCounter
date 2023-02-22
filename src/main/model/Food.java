@@ -12,7 +12,7 @@ public class Food {
     /*
      * REQUIRES: length of foodname and foodunit is non-zero,
      *           calorie >= 0
-     * EFFECTS: construct a kind of food with given name,
+     * EFFECTS: construct a food choice with given name,
      *          unit, calorie and label it with food id.
      */
     public Food(String foodname, String foodunit, double calorie) {
@@ -23,6 +23,12 @@ public class Food {
         this.calorie = calorie;
     }
 
+    /*
+     * REQUIRES: food matches the requirement above
+     *           double >= 0
+     * EFFECTS: construct a eaten food with given name,
+     *          unit, calorie, amount and label it with food id.
+     */
     public Food(Food food, double amount) {
         this.id = unifoodid++;
         this.amount = amount;
@@ -56,28 +62,12 @@ public class Food {
         return this.amount;
     }
 
-    /*
-     * REQUIRES: amount>0
-     * MODIFIES: this
-     * EFFECTS: set the amount of food to given double
-     */
-    public Food setAmount(double amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    /*
-     * MODIFIES: this
-     * EFFECTS: decrease unifoodid by 1
-     */
-    public void decreaseID() {
-        this.unifoodid--;
-    }
-
+    // EFFECTS: print the food with id, name, unit, and calorie
     public String printFood() {
         return "   FoodID:" + String.valueOf(id) + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie;
     }
 
+    // EFFECTS: print the food with id, name, unit, calorie, and amount
     public String printFoodEaten() {
         return "   FoodID:" + String.valueOf(id) + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie
                 + "  Amount:" + amount;

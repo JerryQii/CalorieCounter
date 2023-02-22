@@ -6,8 +6,7 @@ and calculate the total amount of their calories*. You can select the food
 you eat with a specific amount then the application will keep the information 
 and show you the individual food's calories and the total calories. You can 
 also add new kinds of food to the application to make sure it will cover
-your diet. Besides, It informs you how many more calories you 
-can have based on the daily amount of calories you need.
+your diet. 
 
 There are **three** kinds of this application's targeted users:
 - The people who want to lose weight.
