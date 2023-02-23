@@ -12,13 +12,14 @@ public class ListOfFood {
         lof = new ArrayList<>();
     }
 
-    // EFFECTS: return the list of food available
-    public List<Food> getLof() {
-        return this.lof;
-    }
-
-    public Food getElement(int i) {
-        return lof.get(i);
+    // EFFECTS: return the food with id equals to i in the list
+    public Food getFood(int i) {
+        for (Food food: lof) {
+            if (food.getId() == i) {
+                return food;
+            }
+        }
+        return null;
     }
 
     // MODIFIES: this
@@ -27,20 +28,12 @@ public class ListOfFood {
         lof.add(food);
     }
 
-    // EFFECTS: print the list of food with id, name, unit, and calorie
-    public void printList() {
-        for (Food food : lof) {
-            System.out.println(food.printFood());
-        }
+    // EFFECTS: return lof
+    public List<Food> getList() {
+        return lof;
     }
 
-    // EFFECTS: print the list of food with id, name, unit, calorie, and amount
-    public void printListEaten() {
-        for (Food food : lof) {
-            System.out.println(food.printFoodEaten());
-        }
-    }
-
+    // EFFECTS: return the total calorie of all the eaten food with amount in the list
     public double totalCalorie() {
         double calorie = 0;
         for (Food food:lof) {
@@ -49,6 +42,8 @@ public class ListOfFood {
         return calorie;
     }
 
+    // MODIFIES: this
+    // EFFECTS: delete the i-th element in the list
     public void deleteFood(int id) {
         int index = -1;
         int trueid = -1;

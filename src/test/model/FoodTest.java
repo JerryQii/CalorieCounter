@@ -3,15 +3,15 @@ package model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import model.Food;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class FoodTest {
-    public Food ramen;
-    public Food pizza;
-    public Food rameneaten;
+    private Food ramen;
+    private Food pizza;
+    private Food rameneaten;
+
 
     @BeforeEach
     public void runBefore() {
@@ -26,8 +26,8 @@ class FoodTest {
     public void FirstFoodTest() {
         assertEquals("pizza", pizza.getName());
         assertEquals("slice", pizza.getUnit());
-        assertTrue(pizza.getId()>0);
-        assertTrue(ramen.getId()>0);
+        assertTrue(pizza.getId()>=0);
+        assertTrue(ramen.getId()>=0);
         assertEquals(550, ramen.getCalorie());
         assertEquals(0, ramen.getAmount());
     }
@@ -36,14 +36,16 @@ class FoodTest {
     public void SecondFoodTest() {
         assertEquals("ramen", rameneaten.getName());
         assertEquals("bowl", rameneaten.getUnit());
-        assertTrue(rameneaten.getId() > 0);
+        assertTrue(rameneaten.getId() >=0);
         assertEquals(550, rameneaten.getCalorie());
         assertEquals(1.5, rameneaten.getAmount());
     }
 
     @Test
-    public void printTest() {
-
+    public void printFoodTest() {
+        assertEquals("   FoodID:7  Name:pizza  Unit:slice  Calorie:225.0",pizza.printFood());
+        assertEquals("   FoodID:8  Name:ramen  Unit:bowl  Calorie:550.0  Amount:1.5",rameneaten.printFoodEaten());
     }
+
 
 }

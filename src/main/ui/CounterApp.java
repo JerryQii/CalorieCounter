@@ -87,14 +87,18 @@ public class CounterApp {
      */
     private void addEatenFood() {
         System.out.println("Please enter the id of food below that you want to add");
-        lofa.printList();
+        for (Food food : lofa.getList()) {
+            System.out.println(food.printFood());
+        }
         int inputId = command.nextInt();
         System.out.println("Please enter the number of units that you ate");
-        double inputCalorie = command.nextDouble();
-        Food newfood = new Food(lofa.getElement(inputId), inputCalorie);
+        double inputAmount = command.nextDouble();
+        Food newfood = new Food(lofa.getFood(inputId), inputAmount);
         lofi.addFood(newfood);
         System.out.println("And below is your list of food eaten!");
-        lofi.printListEaten();
+        for (Food food : lofi.getList()) {
+            System.out.println(food.printFoodEaten());
+        }
     }
 
     /*
@@ -110,6 +114,10 @@ public class CounterApp {
         double calorie = command.nextDouble();
         Food addedfood = new Food(name,unit,calorie);
         lofa.addFood(addedfood);
+        System.out.println("Below is your new list of food choice");
+        for (Food food : lofa.getList()) {
+            System.out.println(food.printFood());
+        }
     }
 
     /*
@@ -118,12 +126,16 @@ public class CounterApp {
      */
     private void deleteFoodChoice() {
         System.out.println("Below is your list of food choice!");
-        lofa.printList();
+        for (Food food : lofa.getList()) {
+            System.out.println(food.printFood());
+        }
         System.out.println("What's the id of the food choice you want to delete");
         int id = command.nextInt();
         lofa.deleteFood(id);
         System.out.println("Below is your new list of food choice!");
-        lofa.printList();
+        for (Food food : lofa.getList()) {
+            System.out.println(food.printFood());
+        }
 
     }
 
@@ -133,18 +145,24 @@ public class CounterApp {
      */
     private void deleteEatenFood() {
         System.out.println("Below is your list of food eaten!");
-        lofi.printListEaten();
+        for (Food food : lofi.getList()) {
+            System.out.println(food.printFoodEaten());
+        }
         System.out.println("What's the id of the food eaten you want to delete");
         int id = command.nextInt();
         lofi.deleteFood(id);
         System.out.println("Below is your new list of food choice!");
-        lofi.printListEaten();
+        for (Food food : lofi.getList()) {
+            System.out.println(food.printFoodEaten());
+        }
     }
 
     // EFFECTS: print the total calorie of the list of food eaten
     private void calculateCalorie() {
         System.out.println("Here's the list of food you've eaten");
-        lofi.printListEaten();
+        for (Food food : lofi.getList()) {
+            System.out.println(food.printFoodEaten());
+        }
         System.out.println("And the total calorie is " + lofi.totalCalorie() + " calories!");
     }
 }

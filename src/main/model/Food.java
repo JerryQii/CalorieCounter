@@ -64,12 +64,12 @@ public class Food {
 
     // EFFECTS: print the food with id, name, unit, and calorie
     public String printFood() {
-        return "   FoodID:" + String.valueOf(id) + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie;
+        return "   FoodID:" + id + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie;
     }
 
     // EFFECTS: print the food with id, name, unit, calorie, and amount
     public String printFoodEaten() {
-        return "   FoodID:" + String.valueOf(id) + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie
+        return "   FoodID:" + id + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie
                 + "  Amount:" + amount;
     }
 }
