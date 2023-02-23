@@ -43,4 +43,10 @@ public class ListOfFoodTest {
         listchoice.deleteFood(ramen.getId());
         assertEquals(1, listchoice.getList().size());
     }
+
+    @Test
+    public void deleteFailedTest() {
+        listchoice.deleteFood(2);
+        assertEquals(2, listchoice.getList().size());
+    }
 }
