@@ -25,5 +25,5 @@ and encourage them to keep a healthy lifestyle.
 - As a user, I want to be able to view the foods in list of food intake and choice.
 - As a user, I want to be able to delete food in the list of food intake and choice.
 - As a user, I want to be able to see the number of the total calorie intake.
-- As a user, I want to be able to save my list of food choices to file (if I so choose).
-- As a user, I want to be able to load my list of food choices from file (if I so choose).
+- As a user, I want to be able to save my list of food choices/eaten to file (if I so choose).
+- As a user, I want to be able to load my list of food choices/eaten from file (if I so choose).
