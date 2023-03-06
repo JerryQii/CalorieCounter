@@ -1,0 +1,16 @@
+{"ListOfFood": [
+    {
+        "amount": 1,
+        "unit": "can",
+        "name": "coke",
+        "calorie": 185,
+        "id": 7
+    },
+    {
+        "amount": 2,
+        "unit": "lol",
+        "name": "lol",
+        "calorie": 2344,
+        "id": 9
+    }
+]}

@@ -1,5 +1,8 @@
 package model;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +60,23 @@ public class ListOfFood {
         if (!(trueid == -1)) {
             lof.remove(trueid);
         }
+    }
+
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("ListOfFood", loftoJson());
+        return json;
+    }
+
+    // EFFECTS: returns list of food as JSON array
+    public JSONArray loftoJson() {
+        JSONArray jsonArray = new JSONArray();
+
+        for (Food f : lof) {
+            jsonArray.put(f.toJson());
+        }
+
+        return jsonArray;
     }
 
 }

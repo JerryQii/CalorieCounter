@@ -1,0 +1,16 @@
+{"ListOfFood": [
+    {
+        "amount": 3,
+        "unit": "slice",
+        "name": "pizza",
+        "calorie": 285,
+        "id": 31
+    },
+    {
+        "amount": 2,
+        "unit": "bowl",
+        "name": "ramen",
+        "calorie": 550,
+        "id": 30
+    }
+]}

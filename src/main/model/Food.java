@@ -1,5 +1,7 @@
 package model;
 
+import org.json.JSONObject;
+
 // Represents a kind of food with its name, unit, and calorie per unit.
 public class Food {
     private static int unifoodid = 0;
@@ -71,5 +73,16 @@ public class Food {
     public String printFoodEaten() {
         return "   FoodID:" + id + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie
                 + "  Amount:" + amount;
+    }
+
+    // EFFECTS: returns food as JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("id", id);
+        json.put("amount", amount);
+        json.put("name", name);
+        json.put("unit", unit);
+        json.put("calorie", calorie);
+        return json;
     }
 }
