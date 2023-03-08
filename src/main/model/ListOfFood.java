@@ -62,6 +62,7 @@ public class ListOfFood {
         }
     }
 
+    // EFFECTS: return list of food as JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("ListOfFood", loftoJson());

@@ -49,7 +49,7 @@ public class JsonReader {
         return lof;
     }
 
-    // MODIFIES: wr
+    // MODIFIES: lof
     // EFFECTS: parses food from JSON object and adds them to list of food
     private void addFoods(ListOfFood lof, JSONObject jsonObject) {
         JSONArray jsonArray = jsonObject.getJSONArray("ListOfFood");

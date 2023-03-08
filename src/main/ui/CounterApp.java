@@ -86,7 +86,8 @@ public class CounterApp {
         }
     }
 
-
+    // MODIFIES: this
+    // EFFECTS: save the current list of food eaten and list of food choice as json files.
     private void savelist() {
         try {
             jsonWriter.open();
@@ -99,6 +100,8 @@ public class CounterApp {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: load the saved json files of list of food eaten and list of food choice to the program.
     private void loadlist() {
         try {
             lofc = jsonReaderC.read();
