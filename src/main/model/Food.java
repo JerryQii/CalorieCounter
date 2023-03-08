@@ -4,7 +4,6 @@ import org.json.JSONObject;
 
 // Represents a kind of food with its name, unit, and calorie per unit.
 public class Food {
-    private static int unifoodid = 0;
     private int id;
     private double amount;
     private String name;
@@ -13,12 +12,13 @@ public class Food {
 
     /*
      * REQUIRES: length of foodname and foodunit is non-zero,
-     *           calorie >= 0
+     *           calorie >= 0,
+     *           id is different from other food
      * EFFECTS: construct a food choice with given name,
      *          unit, calorie and label it with food id.
      */
-    public Food(String foodname, String foodunit, double calorie) {
-        this.id = unifoodid++;
+    public Food(String foodname, String foodunit, double calorie, int id) {
+        this.id = id;
         this.amount = 0;
         this.name = foodname;
         this.unit = foodunit;
@@ -31,8 +31,8 @@ public class Food {
      * EFFECTS: construct a eaten food with given name,
      *          unit, calorie, amount and label it with food id.
      */
-    public Food(Food food, double amount) {
-        this.id = unifoodid++;
+    public Food(Food food, double amount, int id) {
+        this.id = id;
         this.amount = amount;
         this.name = food.name;
         this.unit = food.unit;

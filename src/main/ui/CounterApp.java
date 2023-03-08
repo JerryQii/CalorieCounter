@@ -49,21 +49,6 @@ public class CounterApp {
         System.out.println("See you soon!");
     }
 
-    /*
-     * MODIFIES: this
-     * EFFECTS: initializes lists of food available
-     */
-    /*private void initialize() {
-        Food ramen = new Food("ramen", "bowl", 550);
-        Food pizza = new Food("pizza", "slice", 285);
-        Food coke = new Food("coke", "can", 185);
-        lofc.addFood(ramen);
-        lofc.addFood(pizza);
-        lofc.addFood(coke);
-    }
-    */
-
-
     // EFFECTS: print the start menu for user
     private void printStartMenu() {
         System.out.println("Please press the following buttons to proceed");
@@ -137,7 +122,9 @@ public class CounterApp {
         int inputId = command.nextInt();
         System.out.println("Please enter the number of units that you ate");
         double inputAmount = command.nextDouble();
-        Food newfood = new Food(lofc.getFood(inputId), inputAmount);
+        System.out.println("Please enter the new different id for the food you eat");
+        int inputid = command.nextInt();
+        Food newfood = new Food(lofc.getFood(inputId), inputAmount,inputid);
         lofe.addFood(newfood);
         System.out.println("And below is your list of food eaten!");
         for (Food food : lofe.getList()) {
@@ -156,7 +143,9 @@ public class CounterApp {
         String unit = command.next();
         System.out.println("What's the calorie per unit of the food");
         double calorie = command.nextDouble();
-        Food addedfood = new Food(name,unit,calorie);
+        System.out.println("Please enter the new different id for the food choice");
+        int inputid = command.nextInt();
+        Food addedfood = new Food(name,unit,calorie, inputid);
         lofc.addFood(addedfood);
         System.out.println("Below is your new list of food choice");
         for (Food food : lofc.getList()) {

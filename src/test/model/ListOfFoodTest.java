@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 public class ListOfFoodTest {
-    private Food ramen = new Food("ramen", "bowl", 550);
-    private Food pizza = new Food("pizza", "slice", 225);
-    private Food rameneaten = new Food(ramen,1.5);
+    private Food ramen = new Food("ramen", "bowl", 550, 1);
+    private Food pizza = new Food("pizza", "slice", 225, 2);
+    private Food rameneaten = new Food(ramen,1.5,3);
     private ListOfFood listchoice;
     private ListOfFood listfoodeaten;
 
@@ -30,7 +30,7 @@ public class ListOfFoodTest {
     @Test
     public void getElementTest() {
         assertEquals(ramen, listchoice.getFood(ramen.getId()));
-        assertNull(listchoice.getFood(2));
+        assertNull(listchoice.getFood(7));
     }
 
     @Test
@@ -46,7 +46,7 @@ public class ListOfFoodTest {
 
     @Test
     public void deleteFailedTest() {
-        listchoice.deleteFood(2);
+        listchoice.deleteFood(3);
         assertEquals(2, listchoice.getList().size());
     }
 }

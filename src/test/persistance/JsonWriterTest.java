@@ -12,6 +12,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;
 
+// based on https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
 public class JsonWriterTest extends JsonTest {
 
     @Test
@@ -51,10 +52,10 @@ public class JsonWriterTest extends JsonTest {
         try {
             ListOfFood lofc = new ListOfFood();
             ListOfFood lofe = new ListOfFood();
-            Food ramen = new Food("ramen", "bowl", 550);
-            Food pizza = new Food("pizza", "slice", 285);
-            Food rameneaten = new Food(ramen,2);
-            Food pizzaeaten = new Food(pizza,3);
+            Food ramen = new Food("ramen", "bowl", 550, 1);
+            Food pizza = new Food("pizza", "slice", 285, 2);
+            Food rameneaten = new Food(ramen,2,3);
+            Food pizzaeaten = new Food(pizza,3,4);
             lofc.addFood(ramen);
             lofc.addFood(pizza);
             lofe.addFood(pizzaeaten);

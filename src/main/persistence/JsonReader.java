@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
+// based on https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo
 // Represents a reader that reads workroom from JSON data stored in file
 public class JsonReader {
     private String source;
@@ -67,8 +68,8 @@ public class JsonReader {
         String unit = jsonObject.getString("unit");
         double calorie = jsonObject.getDouble("calorie");
         //Category category = Category.valueOf(jsonObject.getString("category"));
-        Food food = new Food(name, unit, calorie);
-        Food food2 = new Food(food, amount);
+        Food food = new Food(name, unit, calorie, id);
+        Food food2 = new Food(food, amount, id);
         lof.addFood(food2);
     }
 }
