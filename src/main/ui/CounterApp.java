@@ -125,9 +125,8 @@ public class CounterApp {
         int inputId = command.nextInt();
         System.out.println("Please enter the number of units that you ate");
         double inputAmount = command.nextDouble();
-        System.out.println("Please enter the new different id for the food you eat");
-        int inputid = command.nextInt();
-        Food newfood = new Food(lofc.getFood(inputId), inputAmount,inputid);
+        int newid = lofe.getList().size() + 1;
+        Food newfood = new Food(lofc.getFood(inputId), inputAmount,newid);
         lofe.addFood(newfood);
         System.out.println("And below is your list of food eaten!");
         for (Food food : lofe.getList()) {
@@ -146,9 +145,8 @@ public class CounterApp {
         String unit = command.next();
         System.out.println("What's the calorie per unit of the food");
         double calorie = command.nextDouble();
-        System.out.println("Please enter the new different id for the food choice");
-        int inputid = command.nextInt();
-        Food addedfood = new Food(name,unit,calorie, inputid);
+        int newid = lofc.getList().size() + 1;
+        Food addedfood = new Food(name,unit,calorie, newid);
         lofc.addFood(addedfood);
         System.out.println("Below is your new list of food choice");
         for (Food food : lofc.getList()) {
@@ -168,6 +166,7 @@ public class CounterApp {
         System.out.println("What's the id of the food choice you want to delete");
         int id = command.nextInt();
         lofc.deleteFood(id);
+        lofc.rearrange();
         System.out.println("Below is your new list of food choice!");
         for (Food food : lofc.getList()) {
             System.out.println(food.printFood());
@@ -187,6 +186,7 @@ public class CounterApp {
         System.out.println("What's the id of the food eaten you want to delete");
         int id = command.nextInt();
         lofe.deleteFood(id);
+        lofe.rearrange();
         System.out.println("Below is your new list of food choice!");
         for (Food food : lofe.getList()) {
             System.out.println(food.printFoodEaten());

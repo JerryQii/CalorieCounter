@@ -46,7 +46,7 @@ public class ListOfFood {
     }
 
     // MODIFIES: this
-    // EFFECTS: delete the i-th element in the list
+    // EFFECTS: delete the element with match id in the list
     public void deleteFood(int id) {
         int index = -1;
         int trueid = -1;
@@ -59,6 +59,15 @@ public class ListOfFood {
         }
         if (!(trueid == -1)) {
             lof.remove(trueid);
+        }
+    }
+
+    // EFFECTS: re-arrange the id of food in the list
+    public void rearrange() {
+        int i = 1;
+        for (Food food : lof) {
+            food.setID(i);
+            i++;
         }
     }
 

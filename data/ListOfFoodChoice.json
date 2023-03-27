@@ -22,9 +22,9 @@
     },
     {
         "amount": 0,
-        "unit": "lol",
-        "name": "lol",
-        "calorie": 2344,
+        "unit": "bowl",
+        "name": "rice",
+        "calorie": 200,
         "id": 4
     }
 ]}

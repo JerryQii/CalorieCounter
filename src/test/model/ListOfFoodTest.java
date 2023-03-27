@@ -12,14 +12,18 @@ public class ListOfFoodTest {
     private Food rameneaten = new Food(ramen,1.5,3);
     private ListOfFood listchoice;
     private ListOfFood listfoodeaten;
+    private ListOfFood randomlist;
 
     @BeforeEach
     public void runBefore() {
         listchoice = new ListOfFood();
         listfoodeaten = new ListOfFood();
+        randomlist = new ListOfFood();
         listchoice.addFood(ramen);
         listchoice.addFood(pizza);
         listfoodeaten.addFood(rameneaten);
+        randomlist.addFood(pizza);
+        randomlist.addFood(ramen);
     }
 
     @Test
@@ -48,5 +52,11 @@ public class ListOfFoodTest {
     public void deleteFailedTest() {
         listchoice.deleteFood(3);
         assertEquals(2, listchoice.getList().size());
+    }
+
+    @Test
+    void rearrangeTest() {
+        randomlist.rearrange();
+        assertEquals(pizza,randomlist.getFood(1));
     }
 }

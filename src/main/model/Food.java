@@ -64,6 +64,11 @@ public class Food {
         return this.amount;
     }
 
+    // EFFECTS: set food's id
+    public void setID(int id) {
+        this.id = id;
+    }
+
     // EFFECTS: print the food with id, name, unit, and calorie
     public String printFood() {
         return "   FoodID:" + id + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie;
@@ -73,6 +78,16 @@ public class Food {
     public String printFoodEaten() {
         return "   FoodID:" + id + "  Name:" + name + "  Unit:" + unit + "  Calorie:" + calorie
                 + "  Amount:" + amount;
+    }
+
+    // EFFECTS: override toString method of foods
+    @Override
+    public String toString() {
+        if (amount == 0) {
+            return name + "       "  + calorie + " calories per " + unit;
+        } else {
+            return name + "       "  + calorie + " calories per " + unit + "  amount: " + amount;
+        }
     }
 
     // EFFECTS: returns food as JSON object

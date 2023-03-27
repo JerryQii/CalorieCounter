@@ -47,5 +47,15 @@ class FoodTest {
         assertEquals("   FoodID:3  Name:ramen  Unit:bowl  Calorie:550.0  Amount:1.5",rameneaten.printFoodEaten());
     }
 
+    @Test
+    void setIDtest() {
+        ramen.setID(7);
+        assertTrue(ramen.getId() == 7);
+    }
 
+    @Test
+    void toStringTest() {
+        assertEquals("ramen       550.0 calories per bowl",ramen.toString());
+        assertEquals("ramen       550.0 calories per bowl  amount: 1.5",rameneaten.toString());
+    }
 }

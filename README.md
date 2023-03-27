@@ -27,3 +27,16 @@ and encourage them to keep a healthy lifestyle.
 - As a user, I want to be able to see the number of the total calorie intake.
 - As a user, I want to be able to save my list of food choices/eaten to file (if I so choose).
 - As a user, I want to be able to load my list of food choices/eaten from file (if I so choose).
+
+# Instructions for Grader
+
+- You can generate the first required action related to adding Xs to a Y by selecting one of the
+food choices on the left side then click the button "add to list of food eaten" and type amount
+to add selected food with specified to list of food eaten.
+- You can generate the second required action related to adding Xs to a Y by selecting one of the
+  food eaten on the right side then click the button "delete from list of food eaten"
+  to delete selected food from list of food eaten.
+- You can locate my visual component at the middle of the App and the lists of food choices&eaten 
+can be located at the left and right side of screen.
+- You can save the state of my application by clicking the button "Save the current lists".
+- You can reload the state of my application by clicking the button "Load the saved lists".
