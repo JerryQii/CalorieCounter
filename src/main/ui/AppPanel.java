@@ -146,6 +146,7 @@ public class AppPanel extends JFrame implements ActionListener {
     // EFFECTS: initialize the panels
     private void initializepanels() {
         fcpanel = new JPanel();
+        fcpanel.setPreferredSize(new Dimension(300, 6000));
         fcpanel.setBackground(new Color(119,243,123));
         fcpanel.add(fclist);
         add(fcpanel, BorderLayout.WEST);
@@ -153,6 +154,7 @@ public class AppPanel extends JFrame implements ActionListener {
         fepanel = new JPanel();
         fepanel.setBackground(Color.BLUE);
         fepanel.add(felist);
+        fepanel.setPreferredSize(new Dimension(300, 6000));
         add(fepanel, BorderLayout.EAST);
 
         toolpanel = new JPanel();
@@ -163,14 +165,13 @@ public class AppPanel extends JFrame implements ActionListener {
         picturepanel = new JPanel();
         picturepanel.setBackground(Color.GRAY);
         picturepanel.setLayout(new GridLayout());
-        JLabel giga = new JLabel(new ImageIcon("data/giga2.jpg"));
+        giga = new JLabel(new ImageIcon("data/giga2.jpg"));
         giga.setText("<html>Left side is your list of food choice<br>Right side is your list"
                 + " of food eaten<br>The total calories eaten is  <html>" + calories);
         giga.setVerticalTextPosition(JLabel.BOTTOM);
         giga.setHorizontalTextPosition(JLabel.CENTER);
         picturepanel.add(giga);
         add(picturepanel, BorderLayout.CENTER);
-
     }
 
     // MODIFIES: this

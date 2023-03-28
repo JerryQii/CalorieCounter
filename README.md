@@ -1,4 +1,4 @@
-# Calorie Counter
+    # Calorie Counter
 
 ## Introduction   
 The main purpose of this application is to *keep track of the foods you eat 
