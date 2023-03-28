@@ -18,17 +18,8 @@ public class AppPanel extends JFrame implements ActionListener {
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 800;
     private double calories;
-    private JLabel headlabel;
     private JLabel giga;
-    private JPanel fcpanel;
-    private JPanel fepanel;
     private JPanel toolpanel;
-    private JPanel picturepanel;
-    private JButton savebutton;
-    private JButton loadbutton;
-    private JButton addbutton;
-    private JButton deletebutton;
-    private JButton calbutton;
     private JList<Food> fclist;
     private JList<Food> felist;
     private ListOfFood lofc;
@@ -40,6 +31,7 @@ public class AppPanel extends JFrame implements ActionListener {
     private JsonReader jsonReaderE;
     DefaultListModel<Food> modelc;
     DefaultListModel<Food> modele;
+    JPanel fcpanel = new JPanel();
 
 
     // MODIFIES: this
@@ -80,27 +72,27 @@ public class AppPanel extends JFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: initialize the buttons
     private void initializeButtons() {
-        savebutton = new JButton("Save the current lists");
+        JButton savebutton = new JButton("Save the current lists");
         savebutton.setActionCommand("save");
         savebutton.addActionListener(this);
         toolpanel.add(savebutton);
 
-        loadbutton = new JButton("Load the saved lists");
+        JButton loadbutton = new JButton("Load the saved lists");
         loadbutton.setActionCommand("load");
         loadbutton.addActionListener(this);
         toolpanel.add(loadbutton);
 
-        addbutton = new JButton("add to list of food eaten");
+        JButton addbutton = new JButton("add to list of food eaten");
         addbutton.setActionCommand("add");
         addbutton.addActionListener(this);
         toolpanel.add(addbutton);
 
-        deletebutton = new JButton("delete from list of food eaten");
+        JButton deletebutton = new JButton("delete from list of food eaten");
         deletebutton.setActionCommand("delete");
         deletebutton.addActionListener(this);
         toolpanel.add(deletebutton);
 
-        calbutton = new JButton("calculate total calorie");
+        JButton calbutton = new JButton("calculate total calorie");
         calbutton.setActionCommand("calculate");
         calbutton.addActionListener(this);
         toolpanel.add(calbutton);
@@ -109,7 +101,7 @@ public class AppPanel extends JFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: initialize the labels
     private void initializeLabel() {
-        headlabel = new JLabel("Ready to lose some weight?");
+        JLabel headlabel = new JLabel("Ready to lose some weight?");
         headlabel.setFont(new Font("ITALIC",Font.ITALIC,21));
         headlabel.setForeground(Color.BLACK);
         headlabel.setHorizontalAlignment(JLabel.HORIZONTAL);
@@ -145,13 +137,11 @@ public class AppPanel extends JFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: initialize the panels
     private void initializepanels() {
-        fcpanel = new JPanel();
         fcpanel.setPreferredSize(new Dimension(300, 6000));
         fcpanel.setBackground(new Color(119,243,123));
         fcpanel.add(fclist);
         add(fcpanel, BorderLayout.WEST);
-
-        fepanel = new JPanel();
+        JPanel fepanel = new JPanel();
         fepanel.setBackground(Color.BLUE);
         fepanel.add(felist);
         fepanel.setPreferredSize(new Dimension(300, 6000));
@@ -162,7 +152,7 @@ public class AppPanel extends JFrame implements ActionListener {
         toolpanel.setLayout(new FlowLayout());
         add(toolpanel, BorderLayout.SOUTH);
 
-        picturepanel = new JPanel();
+        JPanel picturepanel = new JPanel();
         picturepanel.setBackground(Color.GRAY);
         picturepanel.setLayout(new GridLayout());
         giga = new JLabel(new ImageIcon("data/giga2.jpg"));
