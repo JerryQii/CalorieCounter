@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.Food;
 import model.ListOfFood;
 import persistence.JsonReader;
@@ -9,12 +11,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 
 // Calorie Counter App based on GUI
-public class AppPanel extends JFrame implements ActionListener {
+public class AppPanel extends JFrame implements ActionListener, WindowListener {
     public static final int WIDTH = 1000;
     public static final int HEIGHT = 800;
     private double calories;
@@ -167,6 +171,7 @@ public class AppPanel extends JFrame implements ActionListener {
     // MODIFIES: this
     // EFFECTS: initialize the jframe
     private void initializeFrame() {
+        this.addWindowListener(this);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(WIDTH,HEIGHT);
@@ -259,4 +264,40 @@ public class AppPanel extends JFrame implements ActionListener {
         }
     }
 
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        for (Event event:EventLog.getInstance()) {
+            System.out.println(event.toString());
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
+    }
 }

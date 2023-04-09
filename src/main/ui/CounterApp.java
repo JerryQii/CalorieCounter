@@ -126,7 +126,7 @@ public class CounterApp {
         System.out.println("Please enter the number of units that you ate");
         double inputAmount = command.nextDouble();
         int newid = lofe.getList().size() + 1;
-        Food newfood = new Food(lofc.getFood(inputId), inputAmount,newid);
+        Food newfood = new Food(lofc.getFood(inputId), inputAmount, newid);
         lofe.addFood(newfood);
         System.out.println("And below is your list of food eaten!");
         for (Food food : lofe.getList()) {
@@ -146,7 +146,7 @@ public class CounterApp {
         System.out.println("What's the calorie per unit of the food");
         double calorie = command.nextDouble();
         int newid = lofc.getList().size() + 1;
-        Food addedfood = new Food(name,unit,calorie, newid);
+        Food addedfood = new Food(name, unit, calorie, newid);
         lofc.addFood(addedfood);
         System.out.println("Below is your new list of food choice");
         for (Food food : lofc.getList()) {

@@ -40,3 +40,48 @@ to add selected food with specified to list of food eaten.
 can be located at the left and right side of screen.
 - You can save the state of my application by clicking the button "Save the current lists".
 - You can reload the state of my application by clicking the button "Load the saved lists".
+
+# Phase 4: Task 2
+- below are the events after the user loaded the saved lists and deleted "rice"
+from list of food eaten.
+
+Sun Apr 09 03:01:50 PDT 2023
+
+added ramen to list of food choice
+
+Sun Apr 09 03:01:50 PDT 2023
+
+added pizza to list of food choice
+
+Sun Apr 09 03:01:50 PDT 2023
+
+added 1.5 bowl of ramen to list of food eaten
+
+Sun Apr 09 03:01:55 PDT 2023
+
+added ramen to list of food choice
+
+Sun Apr 09 03:01:55 PDT 2023
+
+added pizza to list of food choice
+
+Sun Apr 09 03:01:55 PDT 2023
+
+added coke to list of food choice
+
+Sun Apr 09 03:01:55 PDT 2023
+
+added rice to list of food choice
+
+Sun Apr 09 03:01:55 PDT 2023
+
+added 1.0 can of coke to list of food eaten
+
+Sun Apr 09 03:01:55 PDT 2023
+
+added 2.0 bowl of rice to list of food eaten
+
+Sun Apr 09 03:02:00 PDT 2023
+
+deleted 2.0 bowl of rice from list of food eaten
+

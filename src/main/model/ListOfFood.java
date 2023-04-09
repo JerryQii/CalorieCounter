@@ -17,7 +17,7 @@ public class ListOfFood {
 
     // EFFECTS: return the food with id equals to i in the list
     public Food getFood(int i) {
-        for (Food food: lof) {
+        for (Food food : lof) {
             if (food.getId() == i) {
                 return food;
             }
@@ -29,6 +29,12 @@ public class ListOfFood {
     // EFFECTS: add the given food to the list of food available
     public void addFood(Food food) {
         lof.add(food);
+        Event event = new Event("added " + food.getName() + " to list of food choice");
+        if (food.getAmount() != 0) {
+            event = new Event("added " + food.getAmount() + " " + food.getUnit() + " of " + food.getName()
+                    + " to list of food eaten");
+        }
+        EventLog.getInstance().logEvent(event);
     }
 
     // EFFECTS: return lof
@@ -39,7 +45,7 @@ public class ListOfFood {
     // EFFECTS: return the total calorie of all the eaten food with amount in the list
     public double totalCalorie() {
         double calorie = 0;
-        for (Food food:lof) {
+        for (Food food : lof) {
             calorie += food.getCalorie() * food.getAmount();
         }
         return calorie;
@@ -50,7 +56,7 @@ public class ListOfFood {
     public void deleteFood(int id) {
         int index = -1;
         int trueid = -1;
-        for (Food food:lof) {
+        for (Food food : lof) {
             if (food.getId() == id) {
                 trueid = index + 1;
             } else {
@@ -59,6 +65,10 @@ public class ListOfFood {
         }
         if (!(trueid == -1)) {
             lof.remove(trueid);
+            Food food = lof.get(trueid);
+            Event event = new Event("deleted " + food.getAmount() + " " + food.getUnit() + " of "
+                    + food.getName() + " from list of food eaten");
+            EventLog.getInstance().logEvent(event);
         }
     }
 
