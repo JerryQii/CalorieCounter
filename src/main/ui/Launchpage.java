@@ -38,7 +38,7 @@ public class Launchpage extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Open")) {
             dispose();
-            AppPanel app = new AppPanel();
+            CounterApp app = new CounterApp();
         }
         if (e.getActionCommand().equals("Close")) {
             dispose();

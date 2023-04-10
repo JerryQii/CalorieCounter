@@ -85,3 +85,27 @@ Sun Apr 09 03:02:00 PDT 2023
 
 deleted 2.0 bowl of rice from list of food eaten
 
+# Phase 4: Task 3
+- My design is pretty simple and the main function of the App is 
+achieved by two classes which are ListOfFood and Food. They allow user
+to add Food into ListOfFood or delete from it. The changes between Food
+and ListOfFood 
+will first be represented in the two fields of ListOfFood and then the Food
+inside will be loaded into the JList through DefaultListModel.
+The Main method will
+instantiate launchpage which also instantiates CounterApp and the class is
+the graphic UI. The function of saving and loading the lists are
+achieved by one field JsonWriter and two fields JsonReader of CounterApp.
+Each time the user make changes, an Event will be created and added into the EventLog,
+which will be printed to the console once the app is finished running.
+- If I have more time to work on my project, I would make Food&ListOfFood
+abstract classes and make new sub-classes like FoodChoice and ListOfFoodEaten
+because it's more clearly for people to read the code and make the classed less
+cohesive. Right now this app is checking the Food's amount to determine 
+whether it's "FoodChoice" or "FoodEaten" and it's easy to forget writing branches
+for them. I believe the refactoring could improve the quality of my code so
+I'll probably apply it after final.
+
+
+
+
