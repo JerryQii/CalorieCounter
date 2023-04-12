@@ -5,10 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Launchpage of the app
 public class Launchpage extends JFrame implements ActionListener {
     private JButton button;
     private JButton button1;
 
+    // MODIFIES: this
+    // EFFECTS: run the Counter App's launch page
     public Launchpage() {
         super("Launch Page");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

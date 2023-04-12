@@ -13,10 +13,8 @@ public class Event {
     private String description;
 
     /**
-     * Creates an event with the given description
-     * and the current date/time stamp.
-     *
-     * @param description a description of the event
+     * EFFECTS: Creates an event with the given description
+     *          and the current date/time stamp.
      */
     public Event(String description) {
         dateLogged = Calendar.getInstance().getTime();

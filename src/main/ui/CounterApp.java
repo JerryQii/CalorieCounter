@@ -266,9 +266,12 @@ public class CounterApp extends JFrame implements ActionListener, WindowListener
 
     @Override
     public void windowOpened(WindowEvent e) {
-
+        //
     }
 
+    /*
+     * EFFECTS: print the EventLog to the console once the window is closed
+     */
     @Override
     public void windowClosing(WindowEvent e) {
         for (Event event:EventLog.getInstance()) {
@@ -278,26 +281,26 @@ public class CounterApp extends JFrame implements ActionListener, WindowListener
 
     @Override
     public void windowClosed(WindowEvent e) {
-
+        //
     }
 
     @Override
     public void windowIconified(WindowEvent e) {
-
+        //
     }
 
     @Override
     public void windowDeiconified(WindowEvent e) {
-
+        //
     }
 
     @Override
     public void windowActivated(WindowEvent e) {
-
+        //
     }
 
     @Override
     public void windowDeactivated(WindowEvent e) {
-
+        //
     }
 }
